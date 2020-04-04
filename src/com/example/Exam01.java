@@ -1,4 +1,7 @@
 package com.example;
+
+import java.util.*;
+
 /*
 문제 설명
 수지는 자신의 아들이 어떤 몹쓸 친구들이랑 어울리는지 걱정을 하는 엄마다.
@@ -28,7 +31,23 @@ String message = "... --- ..."리턴(정답): "?O?"
 */
 public class Exam01 {
     public static void main(String[] args) {
-        String[] library = {"O ---", "S ..."};
+        String[] library = {"O ---"};
+        HashMap<String,String> map = new HashMap<>();
+
+        for(int i=0; i<library.length; i++) {
+            String[] lib = library[i].split(" ");
+            map.put(lib[1],lib[0]);
+        }
         String message = "... --- ...";
+        String answer = "";
+        String[] mes = message.split(" ");
+        for(int j=0; j<mes.length; j++) {
+            if(map.get(mes[j]) == null) {
+                answer += "?";
+            } else {
+                answer +=map.get(mes[j]);
+            }
+        }
+        System.out.println("정답: " +answer);
     }
 }
