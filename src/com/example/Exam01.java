@@ -31,21 +31,24 @@ String message = "... --- ..."리턴(정답): "?O?"
 */
 public class Exam01 {
     public static void main(String[] args) {
-        String[] library = {"O ---"};
-        HashMap<String,String> map = new HashMap<>();
+        String[] library = {"O ---","S ..."};
+        String message = "... --- ...";
 
-        for(int i=0; i<library.length; i++) {
-            String[] lib = library[i].split(" ");
+        HashMap<String,String> map = new HashMap<>();
+        for(String str : library) {
+            String[] lib = str.split(" ");
             map.put(lib[1],lib[0]);
         }
-        String message = "... --- ...";
-        String answer = "";
+
         String[] mes = message.split(" ");
-        for(int j=0; j<mes.length; j++) {
-            if(map.get(mes[j]) == null) {
-                answer += "?";
+
+        StringBuilder answer = new StringBuilder();
+
+        for(String item : mes) {
+            if(map.get(item) == null) {
+                answer.append("?");
             } else {
-                answer +=map.get(mes[j]);
+                answer.append(map.get(item));
             }
         }
         System.out.println("정답: " +answer);
