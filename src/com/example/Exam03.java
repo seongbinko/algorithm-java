@@ -66,5 +66,6 @@ public class Exam03 {
                 count++;
             }
         }
+        sc.close();
     }
 }
