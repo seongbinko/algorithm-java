@@ -1,4 +1,4 @@
-package com.example;
+package kr.co.programmers;
 /*
 프로그래머스 level1 가운데 글자 가져오기
 https://programmers.co.kr/skill_checks/116764/submissions/5468679?challengeable_type=ChallengeAlgorithm
