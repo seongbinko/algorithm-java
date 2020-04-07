@@ -52,5 +52,6 @@ public class Exam01 {
             }
         }
         System.out.println("정답: " +answer);
+
     }
 }
