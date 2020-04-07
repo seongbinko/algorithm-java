@@ -1,7 +1,7 @@
 package kr.co.programmers;
 
 import java.util.Arrays;
-
+//https://programmers.co.kr/learn/courses/30/lessons/12915
 public class Programmers02 {
 
     public static void main(String[] args) {
