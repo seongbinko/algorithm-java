@@ -8,7 +8,7 @@ public class Programmers11 {
     }
     public static void solution(int a, int b) {
 
-        long answer = ;
+        long answer;
 
         if(a == b) {
             answer = a;
