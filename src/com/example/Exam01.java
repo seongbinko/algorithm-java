@@ -35,6 +35,7 @@ public class Exam01 {
         String message = "... --- ...";
 
         HashMap<String,String> map = new HashMap<>();
+
         for(String str : library) {
             String[] lib = str.split(" ");
             map.put(lib[1],lib[0]);

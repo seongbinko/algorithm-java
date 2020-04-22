@@ -1,6 +1,7 @@
 package kr.co.programmers;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 /*
     문자열 내림차순으로 배치하기
@@ -20,6 +21,10 @@ public class Programmers12 {
         char[] chars = s.toCharArray();
         char temp;
 
+        String[] str = s.split("");
+        Arrays.sort(chars);
+        Arrays.sort(str, Collections.reverseOrder());
+
         for(int i=0; i<s.length(); i++) {
             for(int j=0; j<s.length()-1; j++) {
                 if(chars[j] < chars[j+1]) {
@@ -30,8 +35,9 @@ public class Programmers12 {
             }
         }
         String answer = new String(chars,0,s.length());
-
+        String answer2 = String.valueOf(chars);
 
         System.out.println(answer);
+        System.out.println(answer2);
     }
 }

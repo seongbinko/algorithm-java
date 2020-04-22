@@ -2,7 +2,8 @@ package com.example;
 
 import java.util.Scanner;
 
-public class Gugudan02 {
+public class Gugudan02 extends RuntimeException {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -16,12 +17,16 @@ public class Gugudan02 {
                 break;
             }
         }
+
     }
-    public static void getGugudan(int level, int depth) {
+    public static void getGugudan(int level, int depth)  {
+        if(level >9) {
+            throw new RuntimeException("어유");
+        }
         if(depth > 9) {
             return;
         }
-        System.out.printf("%d * %d = %d\n", level, depth, level*depth);
+        System.out.printf("%d*%d=%d\t", level, depth, level*depth);
         getGugudan(level, depth+1);
     }
 }

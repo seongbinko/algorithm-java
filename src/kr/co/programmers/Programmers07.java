@@ -27,8 +27,9 @@ public class Programmers07 {
     public static void main(String[] args) {
 
         int[] arr = {1,1,3,3,0,1,1};
-        solution(arr);
+        //solution(arr);
         solution2(arr);
+        Programmers07.solution3(arr);
     }
     public static void solution(int[] arr) {
         int[] answer;
@@ -66,5 +67,12 @@ public class Programmers07 {
             answer[i] = list.get(i);
         }
         System.out.println(Arrays.toString(answer));
+    }
+    public static void solution3(int[] arr) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int ar : arr) {
+            set.add(ar);
+        }
+        System.out.println(set.toString());
     }
 }

@@ -7,14 +7,13 @@ import java.util.Arrays;
 * */
 public class Programmers04 {
     public static void main(String[] args) {
-        long n = 123456789103L;
+        long n = 1234567891039878554L;
         //solution01(n);
         solution02(n);
     }
 
     public static void solution01(long n) {
         String str = String.valueOf(n);
-
         String[] arr = str.split("");
 
         int[] answer = new int[arr.length];
@@ -28,7 +27,7 @@ public class Programmers04 {
         for (int i : answer) System.out.println(i);
     }
     public  static  void solution02(long n) {
-        String str = n + "";
+        String str = Long.toString(n);
         int[] answer = new int[str.length()];
 
         StringBuilder sb = new StringBuilder(str);
@@ -38,6 +37,7 @@ public class Programmers04 {
 
         for (int i = 0; i < answer.length; i++) {
             answer[i] = Integer.parseInt(text[i]);
+
         }
         System.out.println(Arrays.toString(answer));
     }
