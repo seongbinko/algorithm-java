@@ -15,7 +15,7 @@ public class App {
         try {
             int count = 8;
             while(count < 9) {
-                run("https://www.10000recipe.com/recipe/690426" + count);
+                run("");
                 count++;
             }
 

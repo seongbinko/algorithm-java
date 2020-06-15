@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 public class Crawler {
     public static void main(String[] args) {
         try {
-            String URL = "https://www.10000recipe.com/recipe/6924266";
+            String URL = "";
 
             Connection conn = Jsoup.connect(URL);
 
