@@ -1,6 +1,6 @@
 package kr.co.programmers;
 
-import java.util.Arrays;
+import java.util.*;
 
 /*
 * 문제 설명
@@ -72,27 +72,35 @@ result
 문제의 설명과 같다.
 */
 public class Programmers14 {
-
     public static void main(String[] args) {
         String[] record = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
-        String[] result = solution(record);
 
-        System.out.println(Arrays.toString(result));
+        String[] answer = solution(record);
+
+        System.out.println(Arrays.toString(answer));
     }
 
     public static String[] solution(String[] record) {
-
-        int i;
-        for(i=0; i<record.length; i++) {
-            String[] temp1 = record[i].split(" ");
-
-            if(i+1 < record.length) {
-                String[] temp2 = record[i + 1].split(" ");
+        Map<String,String> map = new HashMap<>();
+        for(String str : record) {
+            if(!str.contains("Leave")) {
+                String[] split = str.split(" ");
+                map.put(split[1],split[2]);
             }
         }
 
+        ArrayList<String> list = new ArrayList<>();
+        for(String str : record) {
+            String[] split = str.split(" ");
+            String id = split[1];
 
-        String[] answer = null;
-        return answer;
+            if(str.contains("Enter")) {
+                list.add(map.get(id).concat("님이 들어왔습니다."));
+            }
+            if(str.contains("Leave")) {
+                list.add(map.get(id).concat("님이 나갔습니다."));
+            }
+        }
+        return list.toArray(new String[0]);
     }
 }
