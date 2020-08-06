@@ -22,7 +22,6 @@ import java.util.*;
 public class Programmers16 {
     public static void main(String[] args) {
        int[] prices = {3,4,2,1,2};
-
        System.out.println(Arrays.toString(solution(prices)));
     }
     public static int[] solution(int[] prices) {
@@ -30,14 +29,13 @@ public class Programmers16 {
         int[] answer = new int[prices.length];
 
         int count = 0;
-
         while(count < prices.length) {
             if(count != prices.length-1 ) {
+
                 Stack<Integer> st = new Stack<>();
                 st.push(prices[count]);
 
                 for(int i = count +1; i<prices.length; i++) {
-
                     if(prices[count] <= prices[i]) {
                         st.push(prices[i]);
                     } else {
