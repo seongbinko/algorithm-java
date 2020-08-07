@@ -17,12 +17,14 @@ package kr.co.programmers;
         4초 시점의 ₩2은 1초간 가격이 떨어지지 않았습니다.
         5초 시점의 ₩3은 0초간 가격이 떨어지지 않았습니다.
         ※ 공지 - 2019년 2월 28일 지문이 리뉴얼되었습니다.
+
+        int로 Array를 할당하면 초기값 0 이 셋팅이된다 Integer는 null
 */
 import java.util.*;
 public class Programmers16 {
     public static void main(String[] args) {
        int[] prices = {3,4,2,1,2};
-       System.out.println(Arrays.toString(solution(prices)));
+       System.out.println(Arrays.toString(solution2(prices)));
     }
     public static int[] solution(int[] prices) {
 
@@ -50,5 +52,45 @@ public class Programmers16 {
             count++;
         }
         return answer;
+    }
+    public static int[] solution2 (int[] prices) {
+        int[] answer = new int[prices.length];
+
+        for(int i=0; i<prices.length; i++)
+        {
+            for(int j=i+1; j<prices.length; j++)
+            {
+                if(prices[i] > prices[j])
+                {
+                    answer[i] = j - i;
+                    break;
+                }
+                else {
+                    answer[i] = j - i;
+                }
+            }
+        }
+        return answer;
+    }
+
+    public static int[] solution3 (int[] prices) {
+        Stack<Integer> beginIdxs = new Stack<>();
+        int i=0;
+        int[] terms = new int[prices.length];
+
+        beginIdxs.push(i);
+        for (i=1; i<prices.length; i++) {
+            while (!beginIdxs.empty() && prices[i] < prices[beginIdxs.peek()]) {
+                int beginIdx = beginIdxs.pop();
+                terms[beginIdx] = i - beginIdx;
+            }
+            beginIdxs.push(i);
+        }
+        while (!beginIdxs.empty()) {
+            int beginIdx = beginIdxs.pop();
+            terms[beginIdx] = i - beginIdx - 1;
+        }
+
+        return terms;
     }
 }
