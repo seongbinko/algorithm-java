@@ -26,9 +26,6 @@ n	times	    return
 20분이 되었을 때, 두 번째 심사대가 비지만 6번째 사람이 그곳에서 심사를 받지 않고 1분을 더 기다린 후에 첫 번째 심사대에서 심사를 받으면 28분에 모든 사람의 심사가 끝납니다.
 */
 
-import java.util.Arrays;
-import java.util.Stack;
-
 public class Programmers17 {
     public static void main(String[] args) {
         int n = 6;
@@ -37,8 +34,40 @@ public class Programmers17 {
         System.out.println(solution(n,times));
     }
     public static long solution(int n, int[] times) {
-        long answer = 0;
+        long answer = Long.MAX_VALUE;
+        long left = 0;
+        long right = 0;
+        long mid;
 
+        for (int time : times) {
+            if (time > right) {
+                right = time;
+            }
+        }
+
+        right *= n;
+
+        while (left <= right) {
+            long done = 0;
+            mid = (left + right) / 2;
+
+            for (int time : times) {
+                done += mid / time;
+            }
+
+            if (done < n) {
+// 해당 시간동안 심사를 다 하지 못한 경우
+                left = mid + 1;
+            } else {
+// 시간이 여유있거나, 딱 맞는 경우
+                if (mid < answer) {
+// 가장 타이트한 시간을 찾아야 하므로
+                    answer = mid;
+                }
+
+                right = mid - 1;
+            }
+        }
         return answer;
     }
 }
