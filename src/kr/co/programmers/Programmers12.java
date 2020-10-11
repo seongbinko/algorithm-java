@@ -27,14 +27,18 @@ public class Programmers12 {
     //         소문자 97 ~ 122
     public String useArrayMethod(String s) {
 
+        // 1
         String[] strs = s.split("");
-
         Arrays.sort(strs, Collections.reverseOrder());
+        StringBuilder strb1 = new StringBuilder();
+        for (String str : strs) strb1.append(str);
+//        return strb1.toString();
 
-        StringBuilder stringBuilder = new StringBuilder();
-        for (String str : strs) stringBuilder.append(str);
+        //2
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+        return new StringBuilder(new String(chars)).reverse().toString();
 
-        return stringBuilder.toString();
 
     }
 
