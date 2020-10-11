@@ -31,22 +31,21 @@ public class Programmers18 {
 
         Programmers18 ps18 = new Programmers18();
         String[] answer = ps18.solution2(test2, 2);
-        for (String value : answer) {
+        for (String value : answer)
             System.out.printf("%s\t", value);
-        }
+
     }
 
     public String[] solution(String[] strings, int n) {
         String[] arr = new String[strings.length];
 
-        for (int i = 0; i < strings.length; i++) {
+        for (int i = 0; i < strings.length; i++)
             arr[i] = strings[i].charAt(n) + strings[i];
-        }
+
         Arrays.sort(arr);
         String[] answer = new String[strings.length];
-        for (int i = 0; i < answer.length; i++) {
+        for (int i = 0; i < answer.length; i++)
             answer[i] = arr[i].substring(1);
-        }
         return answer;
     }
 
@@ -58,6 +57,7 @@ public class Programmers18 {
             else return 0;
         });
 
+        return strings;
 //        Arrays.sort(strings, new Comparator<String>() {
 //            @Override
 //            public int compare(String o1, String o2) {
@@ -67,6 +67,5 @@ public class Programmers18 {
 //                else return 0;
 //            }
 //        });
-        return strings;
     }
 }
