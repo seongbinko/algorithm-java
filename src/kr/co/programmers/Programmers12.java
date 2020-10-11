@@ -11,33 +11,46 @@ import java.util.Collections;
  */
 public class Programmers12 {
     public static void main(String[] args) {
-        String s = "AaZz";
-        solution(s);
+        String s = "Zbcdefg";
+
+        Programmers12 programmers12 = new Programmers12();
+
+        String answer1 = programmers12.useArrayMethod(s);
+        String answer2 = programmers12.bubbleSort(s);
+
+        System.out.println("방법1: " + answer1);
+        System.out.println("방법2: " + answer2);
     }
+
+    // 숫자 48 ~ 57
     //알파벳크기 대문자 65 ~ 90
     //         소문자 97 ~ 122
-    static void solution (String s) {
+    public String useArrayMethod(String s) {
 
+        String[] strs = s.split("");
+
+        Arrays.sort(strs, Collections.reverseOrder());
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String str : strs) stringBuilder.append(str);
+
+        return stringBuilder.toString();
+
+    }
+
+    public String bubbleSort(String s) {
         char[] chars = s.toCharArray();
-        char temp;
 
-        String[] str = s.split("");
-        Arrays.sort(chars);
-        Arrays.sort(str, Collections.reverseOrder());
-
-        for(int i=0; i<s.length(); i++) {
-            for(int j=0; j<s.length()-1; j++) {
-                if(chars[j] < chars[j+1]) {
-                    temp = chars[j];
-                    chars[j] = chars[j+1];
-                    chars[j+1] = temp;
+        for (int i = 0; i < s.length() - 1; i++) {
+            for (int j = s.length() - 1; j > i; j--) {
+                if (chars[j - 1] < chars[j]) {
+                    char temp = chars[j - 1];
+                    chars[j - 1] = chars[j];
+                    chars[j] = temp;
                 }
             }
         }
-        String answer = new String(chars,0,s.length());
-        String answer2 = String.valueOf(chars);
+        return String.valueOf(chars);
 
-        System.out.println(answer);
-        System.out.println(answer2);
     }
 }
