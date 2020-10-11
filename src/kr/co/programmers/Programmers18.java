@@ -1,7 +1,6 @@
 package kr.co.programmers;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /*
 문자열 내 마음대로 정렬하기
@@ -52,16 +51,22 @@ public class Programmers18 {
     }
 
     public String[] solution2(String[] strings, int n) {
-        Arrays.sort(strings, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (o1.charAt(n) > o2.charAt(n)) return 1;
-                else if (o1.charAt(n) == o2.charAt(n)) return o1.compareTo(o2);
-                else if (o1.charAt(n) < o2.charAt(n)) return -1;
-                else return 0;
-            }
+        Arrays.sort(strings, (o1, o2) -> {
+            if (o1.charAt(n) > o2.charAt(n)) return 1;
+            else if (o1.charAt(n) == o2.charAt(n)) return o1.compareTo(o2);
+            else if (o1.charAt(n) < o2.charAt(n)) return -1;
+            else return 0;
         });
+
+//        Arrays.sort(strings, new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                if (o1.charAt(n) > o2.charAt(n)) return 1;
+//                else if (o1.charAt(n) == o2.charAt(n)) return o1.compareTo(o2);
+//                else if (o1.charAt(n) < o2.charAt(n)) return -1;
+//                else return 0;
+//            }
+//        });
         return strings;
     }
-
 }
