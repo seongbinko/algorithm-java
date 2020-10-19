@@ -26,14 +26,45 @@ n	times	    return
 20분이 되었을 때, 두 번째 심사대가 비지만 6번째 사람이 그곳에서 심사를 받지 않고 1분을 더 기다린 후에 첫 번째 심사대에서 심사를 받으면 28분에 모든 사람의 심사가 끝납니다.
 */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Programmers17 {
     public static void main(String[] args) {
         int n = 6;
-        int[] times = {7,10};
+        int[] times = {7, 10};
 
-        System.out.println(solution(n,times));
+        System.out.println(solution(n, times));
     }
+
     public static long solution(int n, int[] times) {
+        long answer = 0;
+
+        Arrays.sort(times);
+        int maxTime = n * times[0];
+
+        List<Integer> list = new ArrayList<Integer>();
+
+        for (int k = 0; k < times.length; k++) {
+            int currTime = times[k];
+            for (int i = 1; i <= n; i++) {
+                if (currTime <= maxTime) {
+                    list.add(times[k] * i);
+                    currTime += times[k];
+                } else {
+                    break;
+                }
+            }
+        }
+        Collections.sort(list);
+        answer = list.get(n - 1);
+
+        return answer;
+    }
+
+    public static long solution2(int n, int[] times) {
         long answer = Long.MAX_VALUE;
         long left = 0;
         long right = 0;
