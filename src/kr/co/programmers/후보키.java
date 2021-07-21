@@ -39,7 +39,7 @@ relation의 모든 튜플은 유일하게 식별 가능하다.(즉, 중복되는
 입출력 예 #1
 문제에 주어진 릴레이션과 같으며, 후보 키는 2개이다
 */
-public class Programmers15 {
+public class 후보키 {
     public static void main(String[] args) {
        String[][] relation =
                {{"100","ryan","music","2"},{"200","apeach","math","2"},

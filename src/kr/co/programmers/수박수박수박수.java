@@ -1,6 +1,6 @@
 package kr.co.programmers;
 
-public class Programmers09 {
+public class 수박수박수박수 {
     public static void main(String[] args) {
         solution(5);
     }

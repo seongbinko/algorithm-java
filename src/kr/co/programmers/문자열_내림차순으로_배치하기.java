@@ -9,14 +9,14 @@ import java.util.Collections;
     s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다.
     Zbcdefg	 --> gfedcbZ
  */
-public class Programmers12 {
+public class 문자열_내림차순으로_배치하기 {
     public static void main(String[] args) {
         String s = "Zbcdefg";
 
-        Programmers12 programmers12 = new Programmers12();
+        문자열_내림차순으로_배치하기 programmers12 = new 문자열_내림차순으로_배치하기();
 
-        String answer1 = programmers12.useArrayMethod(s);
-        String answer2 = programmers12.bubbleSort(s);
+        String answer1 = useArrayMethod(s);
+        String answer2 = bubbleSort(s);
 
         System.out.println("방법1: " + answer1);
         System.out.println("방법2: " + answer2);
@@ -25,7 +25,7 @@ public class Programmers12 {
     // 숫자 48 ~ 57
     //알파벳크기 대문자 65 ~ 90
     //         소문자 97 ~ 122
-    public String useArrayMethod(String s) {
+    public static String useArrayMethod(String s) {
 
         // 1
         String[] strs = s.split("");
@@ -42,7 +42,7 @@ public class Programmers12 {
 
     }
 
-    public String bubbleSort(String s) {
+    public static String bubbleSort(String s) {
         char[] chars = s.toCharArray();
 
         for (int i = 0; i < s.length() - 1; i++) {

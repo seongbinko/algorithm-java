@@ -31,7 +31,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Programmers17 {
+public class 입국심사 {
     public static void main(String[] args) {
         int n = 6;
         int[] times = {7, 10};

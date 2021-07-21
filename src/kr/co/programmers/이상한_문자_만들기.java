@@ -1,6 +1,6 @@
 package kr.co.programmers;
 
-public class Programmers03 {
+public class 이상한_문자_만들기 {
     /*
     * 문제 설명
         문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다.

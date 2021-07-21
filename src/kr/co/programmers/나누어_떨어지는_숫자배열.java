@@ -15,7 +15,7 @@ import java.util.*;
         [5, 9, 7, 10]	5	        [5, 10]
         [2, 36, 1, 3]	1	[1, 2, 3, 36]
  */
-public class Programmers06 {
+public class 나누어_떨어지는_숫자배열 {
     public static void main(String[] args) {
         int[] arr = {2, 36, 1, 3};
         int divisor = 1;

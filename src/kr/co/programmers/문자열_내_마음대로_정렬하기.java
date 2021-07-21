@@ -2,7 +2,7 @@ package kr.co.programmers;
 
 import java.util.Arrays;
 //https://programmers.co.kr/learn/courses/30/lessons/12915
-public class Programmers02 {
+public class 문자열_내_마음대로_정렬하기 {
 
     public static void main(String[] args) {
         String[] strings = {"sun", "bed", "car"};

@@ -6,7 +6,7 @@ package kr.co.programmers;
         num은 int 범위의 정수입니다.
 0은 짝수입니다.
 * */
-public class Programmers05 {
+public class 짝수와홀수 {
 
     public static void main(String[] args) {
         int n = 3;

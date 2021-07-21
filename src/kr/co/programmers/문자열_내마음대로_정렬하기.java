@@ -24,19 +24,18 @@ import java.util.Arrays;
         abce와 abcd, cdx의 2번째 인덱스 값은 c, c, x입니다. 따라서 정렬 후에는 cdx가 가장 뒤에 위치합니다.
         abce와 abcd는 사전순으로 정렬하면 abcd가 우선하므로, 답은 [abcd, abce, cdx] 입니다.
  */
-public class Programmers18 {
+public class 문자열_내마음대로_정렬하기 {
     public static void main(String[] args) {
         String[] test1 = {"sun", "bed", "car"};
         String[] test2 = {"abce", "abcd", "cdx"};
 
-        Programmers18 ps18 = new Programmers18();
-        String[] answer = ps18.solution2(test2, 2);
+        String[] answer = solution(test2, 2);
         for (String value : answer)
             System.out.printf("%s\t", value);
 
     }
 
-    public String[] solution(String[] strings, int n) {
+    public static String[] solution(String[] strings, int n) {
         String[] arr = new String[strings.length];
 
         for (int i = 0; i < strings.length; i++)
@@ -49,7 +48,7 @@ public class Programmers18 {
         return answer;
     }
 
-    public String[] solution2(String[] strings, int n) {
+    public static String[] solution2(String[] strings, int n) {
         Arrays.sort(strings, (o1, o2) -> {
             if (o1.charAt(n) > o2.charAt(n)) return 1;
             else if (o1.charAt(n) == o2.charAt(n)) return o1.compareTo(o2);

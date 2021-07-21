@@ -30,16 +30,16 @@ import java.util.Arrays;
     입출력 예 #3
     첫 번째 전화번호, “12”가 두 번째 전화번호 “123”의 접두사입니다. 따라서 답은 false입니다.
 */
-public class Programmers19 {
+public class 전화번호목록 {
 
     public static void main(String[] args) {
         String[] phone_book = {"119", "97674223", "1195524421"};
-        Programmers19 programmers19 = new Programmers19();
-        boolean answer = programmers19.solution(phone_book);
+        boolean answer = solution(phone_book);
+
         System.out.println(answer);
     }
 
-    public boolean solution(String[] phone_book) {
+    public static boolean solution(String[] phone_book) {
         Arrays.sort(phone_book);
 
         for (int k = phone_book.length - 1; k > 0; k--) {

@@ -21,7 +21,7 @@ package kr.co.programmers;
         int로 Array를 할당하면 초기값 0 이 셋팅이된다 Integer는 null
 */
 import java.util.*;
-public class Programmers16 {
+public class 주식가격 {
     public static void main(String[] args) {
        int[] prices = {1,2,3,2,3};
        System.out.println(Arrays.toString(solution4(prices)));

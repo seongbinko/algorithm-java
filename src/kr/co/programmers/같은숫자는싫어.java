@@ -23,13 +23,13 @@ package kr.co.programmers;
 
 import java.util.*;
 
-public class Programmers07 {
+public class 같은숫자는싫어 {
     public static void main(String[] args) {
 
         int[] arr = {1,1,3,3,0,1,1};
         //solution(arr);
         solution2(arr);
-        Programmers07.solution3(arr);
+        solution3(arr);
     }
     public static void solution(int[] arr) {
         int[] answer;

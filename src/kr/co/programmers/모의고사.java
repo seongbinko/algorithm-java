@@ -2,7 +2,7 @@ package kr.co.programmers;
 
 import java.util.*;
 
-public class Programmers13 {
+public class 모의고사 {
 
     public static void main(String[] args) {
         int[] answers = {1,2,3,5,4,1,3};

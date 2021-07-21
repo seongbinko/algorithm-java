@@ -3,7 +3,7 @@ package kr.co.programmers;
 import java.util.Arrays;
 import java.util.HashMap;
 //완주하지 못한선수 hash
-public class Programmers10 {
+public class 완주하지못한선수 {
     //2차
     public static void main(String[] args) {
         String[] participant = {"marina", "josipa", "nikola", "vinko", "filipa"};
