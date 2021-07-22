@@ -27,7 +27,7 @@
       <br/> 스플릿은 그 값이 없다면 원문으로 들어간다.
 - toLowerCase()
 - replace()
-- Character.isDigit(c), Character.isLetter(c)
+- Character.isDigit(c), Character.isLetter(c) 
 - StringBuilder sb = new StringBuilder(); sb.append(“aa”)
 - String.join() 
 
