@@ -25,12 +25,18 @@
       <br/> str.endWith(“c”);=true
     - ex)String s = "abc" s.split(".");
       <br/> 스플릿은 그 값이 없다면 원문으로 들어간다.
+      <br/> 파라미터로 limit을 주어 원하는 덩어리만큼으로 쪼갤 수 있다. 
 - toLowerCase()
 - replace()
 - Character.isDigit(c), Character.isLetter(c) 
 - StringBuilder sb = new StringBuilder(); sb.append(“aa”)
-- String.join() 
+- String.join()
 
+### Array
+1. Math.max(max, a) => max 구하기
+2. Map+ Array => two sum 문제
+3. array+ stack => Daily Temperature
+4. sum = sum+ nums[] => sum += nums[]
 
 ### 시간복잡도
 
