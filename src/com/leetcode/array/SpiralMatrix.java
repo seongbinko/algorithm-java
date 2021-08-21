@@ -17,7 +17,7 @@ public class SpiralMatrix {
 //          {9, 10, 11, 12}
 //        };
         System.out.println(spiralOrder(nums));
-//        System.out.println(spiralOrder2(nums));
+        System.out.println(spiralOrder2(nums));
     }
 
 
