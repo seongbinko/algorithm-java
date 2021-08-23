@@ -38,6 +38,17 @@
 3. array+ stack => Daily Temperature
 4. sum = sum+ nums[] => sum += nums[]
 
+### TwoPointer
+1. 같은 방향
+    - start 포인트가 시작, end 포인트를 저장했다가 이용 ex) MoveZero
+2. 반대 방향
+    - while문에서 간격이 좁아지는 형태 ex) Trapping Rain Water
+3. 슬라이딩 윈도우
+    - 일정 크기 간격을 유지 ex) The Longest Substring Without Repeating Characters
+4. Prefix Sum
+    - ex) Subarray Sum
+5. Cycle Finding
+    - Linked List Cycle
 ### 시간복잡도
 
 대상: 문제에서 입력받은 파라미터(array 등)(속도)
