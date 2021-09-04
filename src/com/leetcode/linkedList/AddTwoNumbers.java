@@ -1,24 +1,5 @@
 package com.leetcode.linkedList;
 
-class ListNode {
-
-    int val;
-    ListNode next;
-
-    ListNode() {
-
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
 /**
  * ListNode (LinkedList의 근본)
  * 243
@@ -65,6 +46,7 @@ public class AddTwoNumbers {
             p3 = p3.next;
             carry /= 10;
         }
+        // 마지막 끝이 10이상일 경우 체크
         if (carry == 1) {
             p3.next = new ListNode(1);
         }
