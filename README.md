@@ -49,6 +49,13 @@
     - ex) Subarray Sum
 5. Cycle Finding
     - Linked List Cycle
+### LinkedList
+    
+### Stack
+- LFIO 방식
+- push(), peek(), pop()
+- 점수계산, 계산기, 괄호 {} [] 문제가 나오면 Stack이라고 생각하자.
+
 ### 시간복잡도
 
 대상: 문제에서 입력받은 파라미터(array 등)(속도)
