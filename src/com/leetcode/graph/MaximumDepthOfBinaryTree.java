@@ -7,10 +7,10 @@ package com.leetcode.graph;
  * 재귀를 이용해서 풀었고 제일 깊은 곳이 1이 된다. root는 3?
  */
 
-public class MaximumDepthOfBinaryTree_recursive {
+public class MaximumDepthOfBinaryTree {
 
     public static void main(String[] args) {
-        MaximumDepthOfBinaryTree_recursive a = new MaximumDepthOfBinaryTree_recursive();
+        MaximumDepthOfBinaryTree a = new MaximumDepthOfBinaryTree();
         TreeNode root = new TreeNode(3);
         root.left = new TreeNode(1);
         root.right = new TreeNode(4);
