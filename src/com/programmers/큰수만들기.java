@@ -1,0 +1,110 @@
+package com.programmers;
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+/**
+ * 문제 설명
+ * 어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.
+ *
+ * 예를 들어, 숫자 1924에서 수 두 개를 제거하면 [19, 12, 14, 92, 94, 24] 를 만들 수 있습니다. 이 중 가장 큰 숫자는 94 입니다.
+ *
+ * 문자열 형식으로 숫자 number와 제거할 수의 개수 k가 solution 함수의 매개변수로 주어집니다. number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 문자열 형태로 return 하도록 solution 함수를 완성하세요.
+ *
+ * 제한 조건
+ * number는 1자리 이상, 1,000,000자리 이하인 숫자입니다.
+ * k는 1 이상 number의 자릿수 미만인 자연수입니다.
+ * 입출력 예
+ * number	k	return
+ * "1924"	2	"94"
+ * "1231234"	3	"3234"
+ * "4177252841"	4	"775841"
+ *
+ * https://bcp0109.tistory.com/15 조합
+ * https://programmers.co.kr/learn/courses/30/lessons/42883
+ */
+public class 큰수만들기 {
+    public static void main(String[] args) {
+        큰수만들기 solution = new 큰수만들기();
+        System.out.println(solution.solution("4177252841", 4));
+
+    }
+    int max = -1;
+    public String solution(String number, int k) {
+        int n = number.length();
+        int r = n - k;
+        boolean[] visited = new boolean[n];
+        char[] chars = number.toCharArray();
+
+        comb(chars, visited, 0, n, r);
+
+        return String.valueOf(max);
+    }
+
+    void comb(char[] arr, boolean[] visited, int start, int n, int r) {
+        if (r == 0) {
+            max = Math.max(max, Integer.valueOf(combineNumber(arr, visited, n)));
+            return;
+        }
+
+        for(int i = start; i < n; i++) {
+            visited[i] = true;
+            comb(arr, visited, i+1, n, r-1);
+            visited[i] = false;
+        }
+    }
+
+    // 배열 출력
+    private String combineNumber(char[] arr, boolean[] visited, int n) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            if (visited[i]) {
+                sb.append(arr[i]);
+            }
+        }
+        return sb.toString();
+    }
+
+    public String solution_wrong2 (String number, int k) {
+        // 0 - 3 // 1-4// 2-5 // 3-6 // 4-7 // k=3
+
+        int start = 0;
+        int end = number.length();
+        int max = -1;
+
+        for(int i = start; i <= end - k; i++) {
+            String temp = number.substring(i, i + k);
+            max = Math.max(max, Integer.valueOf(temp));
+        }
+
+        return String.valueOf(max);
+    }
+
+
+    /**
+     * 자리수를 바꾸면 안되는데 자리수까지 변경해서 문제가 되었다.
+     * @param number
+     * @param k
+     * @return
+     */
+    public String solution_wrong(String number, int k) {
+        // 힙소트에 최대힙 기준으로 넣고, 뽑을 때 매개변수 k를 기준만큼 덜 뽑는다.
+
+        StringBuilder sb = new StringBuilder();
+
+        Queue<Integer> heapq = new PriorityQueue<>();
+        char[] chars = number.toCharArray();
+        for(char ch : chars) {
+            heapq.offer(-(ch - '0'));
+        }
+
+        int length = chars.length;
+        while(length > k) {
+            sb.append(-heapq.poll());
+            length--;
+        }
+
+        return sb.toString();
+    }
+
+}
